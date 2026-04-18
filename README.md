@@ -1,48 +1,12 @@
+# Weather API Project
 
- main.py
+#API Used is OPENWEATHER API
+#Code alows user enter a city name and get back real time information adnw eather on that city
 
-import requests
+#Program includes:
+-Temp
+-Feels like Temp
+-humidity
+-Weather Conditions
 
-API_KEY = "d9306607b47e1169c27a87909af4944d"
-def get_weather():
-    city = input("Enter a city name: ")
-    url = f"https://openweathermap.org/data/2.5/weather?q={city}&units=imperial&appid={API_KEY}"
-
-    try:
-        response = requests.get(url)
-        data = response.json()
-
-        if response.status_code == 200:
-            temp = data["main"]["temp"]
-            feels_like = data["main]["feels_like"]
-            humidity = data["main"]["humidity"]
-            description = data["weather"][0]["description"]
-
-            print("Weather info: ")
-            print("City: {city}")
-            print("Temperature: {temp}F")
-            print("Feels like: {feels_like}")
-            print("Humidity: {humidity}%")
-            print("Condition: {description}")
-
-        else:
-            print("Error: City not found")
-
-    except:
-        print("Could not connect to API")
-
-def main():
-    while True:
-        print("1. Get weather")
-        print("2. Exit")
-        choice = input("Choose an option: ")
-
-        if choice == "1":
-            get.weather()
-        elif choice == "2":
-            print("Goodbye!")
-            break
-        else:
-            Print("Invalid Choice")
-
-main()
+This code features a menu system, error handling, and multiple data outputs
